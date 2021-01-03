@@ -23,3 +23,4 @@ docker-compose up
 - [meta-tags](https://github.com/kpumuk/meta-tags)
 - [google-analytics-rails](https://github.com/bgarret/google-analytics-rails)
 - [google-api-client](https://github.com/googleapis/google-api-ruby-client)
+- [active_link_to](https://github.com/comfy/active_link_to)
