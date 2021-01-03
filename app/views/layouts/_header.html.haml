@@ -2,8 +2,9 @@
     %nav.navbar.navbar-expand-lg.navbar-light.bg-light
         %div.container-fluid
             = link_to "izszzz", "#", class: "navbar-brand"
-            %div.collapse.navbar-collapse.id="navbarNav"
+            %div#navbarNav.collapse.navbar-collapse
                 %ul.navbar-nav
-                    %li.nav-item= link_to "Home", "#", class: "nav-link"
-                    %li.nav-item= link_to "Contact", "#", class: "nav-link"
+                    %li.nav-item= active_link_to "Home", root_path, class: "nav-link"
+                    %li.nav-item= active_link_to "Posts", posts_path, class: "nav-link"
+                    %li.nav-item= active_link_to "Contact", "contact_path", class: "nav-link"
 

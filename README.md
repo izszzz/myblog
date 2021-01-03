@@ -12,7 +12,7 @@ docker-compose up
 
 ## Gems
 
-- [rspec-railsc](https://github.com/rspec/rspec-rails)
+- [rspec-rails](https://github.com/rspec/rspec-rails)
 - [hamlit](https://github.com/k0kubun/hamlit)
 - [device](https://github.com/heartcombo/devise)
 - [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on)
