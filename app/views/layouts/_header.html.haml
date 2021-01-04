@@ -1,10 +1,13 @@
+- paths = {"Home" => root_path, "Posts" => posts_path, "Contact" => static_pages_contact_path}
+
 %header
-    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
-        %div.container-fluid
-            = link_to "izszzz", "#", class: "navbar-brand"
-            %div#navbarNav.collapse.navbar-collapse
-                %ul.navbar-nav
-                    %li.nav-item= active_link_to "Home", root_path, class: "nav-link"
-                    %li.nav-item= active_link_to "Posts", posts_path, class: "nav-link"
-                    %li.nav-item= active_link_to "Contact", "contact_path", class: "nav-link"
+  %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    %div.container-fluid
+      = link_to "izszzz", root_path, class: "navbar-brand"
+      %div#navbarNav.collapse.navbar-collapse
+        %ul.navbar-nav
+          - paths.each do |label, path|
+            %li.nav-item= active_link_to label, path, class: "nav-link"
+          - if admin_signed_in?
+            = link_to 'New Post', new_post_path, class: "btn btn-primary"
 

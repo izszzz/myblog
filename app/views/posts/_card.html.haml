@@ -1,0 +1,14 @@
+- p post
+%div.card.mb-3{style: "max-width: 540px;"}
+  %div.row.g-0
+    %div.col-md-4.post-card-img
+      = icon "fab", post.tags[0]
+    %div.col-md-8
+      %div.card-body
+        %h5.card-title= post.title
+        %p.card-text= post.summary
+        %div.btn-group
+          = link_to "Show", post, class: "btn btn-primary"
+          - if admin_signed_in?
+            = link_to "Edit", edit_post_path(post), class: "btn btn-success"
+            = link_to "Delete", post, method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}
