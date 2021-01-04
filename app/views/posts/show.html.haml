@@ -1,4 +1,5 @@
-%p#notice= notice
+- if notice
+  %div#notice.alert.alert-primary= notice
 
 = markdown @post.body
 

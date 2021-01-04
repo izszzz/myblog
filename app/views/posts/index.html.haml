@@ -1,8 +1,8 @@
-%p#notice= notice 
+- if notice
+  %div#notice.alert.alert-primary= notice 
 
 %h1 記事一覧
 
-%div.row.row-cols-1.row-cols-md-2.g-4
-  - @posts.each do |post|
-    = render "card", post: post
+- @posts.each do |post|
+  = render "card", post: post
 

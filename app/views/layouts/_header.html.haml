@@ -1,13 +1,15 @@
 - paths = {"Home" => root_path, "Posts" => posts_path, "Contact" => static_pages_contact_path}
 
 %header
-  %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
     %div.container-fluid
       = link_to "izszzz", root_path, class: "navbar-brand"
       %div#navbarNav.collapse.navbar-collapse
         %ul.navbar-nav
           - paths.each do |label, path|
             %li.nav-item= active_link_to label, path, active: :exact, class: "nav-link"
-          - if admin_signed_in?
+        - if admin_signed_in?
+          %div.btn-group.ml-auto
             = link_to 'New Post', new_post_path, class: "btn btn-primary"
+            = link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: "btn btn-danger"
 

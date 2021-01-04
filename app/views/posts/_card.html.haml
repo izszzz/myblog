@@ -1,26 +1,23 @@
-%div.col
-  %div.card.mb-3
-    %div.row.g-0
-      %div.col-md-4.post-card-img
-        %i.fab{class: "fa-#{post.tags[0]}"}
-      %div.col-md-8
-        %div.card-body
-          %h5.card-title= post.title
-          %p.card-text= post.summary
-          %p
-            %i.fas.fa-tag.text-muted
-            - post.tags.each do |tag|
-              = link_to tag, "#"
-          %div.d-flex.justify-content-end
-            %div.btn-group.ml-auto
-              = link_to "Show", post, class: "btn btn-primary"
-              - if admin_signed_in?
-                = link_to "Edit", edit_post_path(post), class: "btn btn-success"
-                = link_to "Delete", post, method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}
-      %div.card-footer
-        %small.text-muted
-          = post.created_at.strftime("%Y/%m/%d")
-        %small.text-muted
-          %i.fas.fa-folder-open
-          = link_to post.category[0], "#"
-          
+%div.card.mb-3
+  %div.row.g-0
+    %div.col-md-4.post-card-img
+      %i.fab{class: "fa-#{post.tags[0]}"}
+    %div.col-md-8
+      %div.card-body
+        %h5.card-title= post.title
+        %p.card-text= post.summary
+        %p
+          %i.fas.fa-folder-open.text_muted
+          = link_to post.category[0], "#", class: "btn btn-secondary btn-sm"
+          %i.fas.fa-tag.text_muted
+          - post.tags.each do |tag|
+            = link_to tag, "#", class: "btn btn-secondary btn-sm"
+        %div.d-flex.justify-content-end
+          %div.btn-group
+            = link_to "Show", post, class: "btn btn-primary"
+            - if admin_signed_in?
+              = link_to "Edit", edit_post_path(post), class: "btn btn-success"
+              = link_to "Delete", post, method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}
+    %div.card-footer
+      %small.text-muted
+        = post.created_at.strftime("%Y/%m/%d")
