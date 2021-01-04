@@ -2,7 +2,7 @@
   %div#notice.alert.alert-primary= notice
 
 %div.row
-  %div.col.8
+  %div.col.8.markdown
     = markdown @post.body
   %div.col-4
     = render "sidebar", posts: @posts
