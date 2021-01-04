@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.8'
 
+gem 'redcarpet'
 gem 'hamlit'
 gem 'devise'
 gem 'figaro'

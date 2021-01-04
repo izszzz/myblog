@@ -12,6 +12,7 @@ docker-compose up
 
 ## Gems
 
+- [redcarpet](https://github.com/vmg/redcarpet)
 - [rspec-rails](https://github.com/rspec/rspec-rails)
 - [hamlit](https://github.com/k0kubun/hamlit)
 - [device](https://github.com/heartcombo/devise)
