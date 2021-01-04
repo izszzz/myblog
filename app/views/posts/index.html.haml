@@ -2,7 +2,7 @@
   %div#notice.alert.alert-primary= notice 
 
 %h1 記事一覧
-
 - @posts.each do |post|
-  = render "card", post: post
+  = render "posts/card/card", post: post
+
 

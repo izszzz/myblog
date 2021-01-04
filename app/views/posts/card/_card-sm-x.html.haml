@@ -1,0 +1,9 @@
+%div.card.mb-3
+  %div.row.g-0
+    %div.col-md-4.post-card-img.sm-x
+      %i.fab{class: "fa-#{post.tags[0]}"}
+    %div.col-md-8
+      %div.card-body
+        %h6.card-title= post.title
+        %small.text-muted
+          = post.created_at.strftime("%Y/%m/%d")

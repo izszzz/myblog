@@ -1,0 +1,8 @@
+%div.card.mt-3
+  %div.col-md-4.post-card-img.sm-y
+    %i.fab{class: "fa-#{post.tags[0]}"}
+  %div.card-body
+    %h6.card-title.text-truncate= post.title 
+    %p.card-text= post.summary
+  %div.card-footer
+    %small.text-muted= post.created_at.strftime("%Y/%m/%d")

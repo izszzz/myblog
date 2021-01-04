@@ -1,8 +1,16 @@
 - if notice
   %div#notice.alert.alert-primary= notice
 
-= markdown @post.body
+%div.row
+  %div.col.8
+    = markdown @post.body
+  %div.col-4
+    = render "sidebar", posts: @posts
 
-= link_to 'Edit', edit_post_path(@post) 
-|
-= link_to 'Back', posts_path 
+- if admin_signed_in?    
+  = link_to 'Edit', edit_post_path(@post), "btn btn-success"
+  |
+= link_to 'Back', posts_path, class: "btn btn-secondary"
+
+%div
+  = render "bottom-content", posts: @posts
