@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  root "static_pages#home"
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions'
+  }
+  root 'static_pages#home'
   get 'static_pages/home'
   get 'static_pages/about'
   get 'static_pages/contact'

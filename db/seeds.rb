@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Admin.create(email: 'izszzz@yahoo.co.jp', password: '7896yaya')
+
 Post.create(
   category_list: "Tech",
   tag_list: "raspberry-pi, linux",

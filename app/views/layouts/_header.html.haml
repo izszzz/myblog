@@ -7,7 +7,7 @@
       %div#navbarNav.collapse.navbar-collapse
         %ul.navbar-nav
           - paths.each do |label, path|
-            %li.nav-item= active_link_to label, path, class: "nav-link"
+            %li.nav-item= active_link_to label, path, active: :exact, class: "nav-link"
           - if admin_signed_in?
             = link_to 'New Post', new_post_path, class: "btn btn-primary"
 
