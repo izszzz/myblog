@@ -12,6 +12,7 @@ docker-compose up
 
 ## Gems
 
+- [rouge](https://github.com/rouge-ruby/rouges)
 - [redcarpet](https://github.com/vmg/redcarpet)
 - [rspec-rails](https://github.com/rspec/rspec-rails)
 - [hamlit](https://github.com/k0kubun/hamlit)

@@ -1,12 +1,6 @@
 %p#notice= notice
 
-%p
-  %strong Title:
-  = @post.title 
-
-%p
-  %strong Body:
-  = @post.body 
+= markdown @post.body
 
 = link_to 'Edit', edit_post_path(@post) 
 |
