@@ -310,11 +310,11 @@ Post.create(
   category_list: "Tech",
   tag_list: "raspberry-pi linux",
   title: "RaspberryPi Zeroでgattlibのインストールが失敗する",
-  summary: "RaspberryPi Zeroでpybluez[ble]のgattlibのインストールに失敗した。",
+  summary: "RaspberryPi Zeroでpybluez[ble]のgattlibのインストールに失敗したときの解決方法",
   body: %Q{
     ## はじめに
 
-    [こちらの記事][1]を確認することを推奨売る。
+    [こちらの記事][1]を確認することを推奨する。
 
     - [RaspberryPi Zeroでgattlibのインストールが失敗する](#raspberrypi-zeroでgattlibのインストールが失敗する)
       - [はじめに](#はじめに)
@@ -410,7 +410,7 @@ Post.create(
 
     #### boost_pythonのバージョンを確認する
 
-    最新のバージョンが出力されたらそれを確認する。
+    最新のバージョンを確認する。
 
     ```log
     sudo find / -name "libboost_python*"
@@ -433,7 +433,7 @@ Post.create(
 
     #### setup.pyを編集する
 
-    [boost_pythonのバーしょんを確認する](#boost_pythonのバージョンを確認する)で取得したバージョンを、以下のコマンドに入れる。
+    [boost_pythonのバージョンを確認する](#boost_pythonのバージョンを確認する)で取得したバージョンを、以下のコマンドに入れる。
 
     ```cmd
     sed -ie 's/boost_python-py34/boost_python-py{XX}/' setup.py

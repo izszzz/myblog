@@ -1,14 +1,22 @@
-- p post
-%div.card.mb-3{style: "max-width: 540px;"}
-  %div.row.g-0
-    %div.col-md-4.post-card-img
-      = icon "fab", post.tags[0]
-    %div.col-md-8
-      %div.card-body
-        %h5.card-title= post.title
-        %p.card-text= post.summary
-        %div.btn-group
-          = link_to "Show", post, class: "btn btn-primary"
-          - if admin_signed_in?
-            = link_to "Edit", edit_post_path(post), class: "btn btn-success"
-            = link_to "Delete", post, method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}
+%div.col
+  %div.card.mb-3
+    %div.row.g-0
+      %div.col-md-4.post-card-img
+        = icon "fab", post.tags[0]
+      %div.col-md-8
+        %div.card-body.d-flex.flex-column.justify-content-between.h-100
+          %h5.card-title= post.title
+          %p.card-text= post.summary
+          %p
+            = icon "fas", "fa-tag"
+            - post.tags.each do |tag|
+              = link_to tag, "#"
+          %div.btn-group
+            = link_to "Show", post, class: "btn btn-primary", style: "width: 80px"
+            - if admin_signed_in?
+              = link_to "Edit", edit_post_path(post), class: "btn btn-success"
+              = link_to "Delete", post, method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}
+      %div.card-footer
+        %small.text-muted
+          = post.created_at.strftime("%Y/%m/%d")
+          

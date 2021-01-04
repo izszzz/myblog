@@ -5,7 +5,7 @@
 - if admin_signed_in?
   = link_to 'New Post', new_post_path, class: "btn btn-primary"
 
-- @posts.each do |post|
-  %div.row.row-cols-1.row-cols-md-3.g-4
+%div.row.row-cols-1.row-cols-md-2.g-4
+  - @posts.each do |post|
     = render "card", post: post
 
