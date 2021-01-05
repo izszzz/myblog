@@ -10,6 +10,12 @@ docker-compose up
 
 [Quickstart: Compose and Rails](https://docs.docker.com/compose/rails)
 
+## Credentials
+
+```cmd
+EDITOR="vi" bin/rails credentials:edit
+```
+
 ## Gems
 
 - [rouge](https://github.com/rouge-ruby/rouges)
