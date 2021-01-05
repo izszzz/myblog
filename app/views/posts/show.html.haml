@@ -31,9 +31,9 @@
         = link_to 'Back', posts_path, class: "btn btn-secondary"
 
     %div.mt-5
-      = render "bottom-content", posts: @posts
+      = render "bottom-content", related_posts: @related_posts
 
   %div.col-0.col-md-4.d-none.d-md-block
-    = render "sidebar", posts: @posts
+    = render "sidebar", posts: @posts, latest_posts: @latest_posts, related_posts: @related_posts
 
 

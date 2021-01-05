@@ -11,7 +11,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @posts = Post.all
+    @related_posts = Post.tagged_with(@post.tag_list, any: true).last(4)
+    @latest_posts = Post.last(4)
   end
 
   # GET /posts/new
