@@ -1,2 +1,7 @@
-%footer
-  
+- paths = {"お問い合わせ" => new_contact_path, "プライバシーポリシー" => static_pages_privacy_path}
+
+%footer.my-5
+  %ul.nav.justify-content-center
+    - paths.each do |name, url|
+      %li.nav-item
+        = active_link_to name, url, active: :exact,class: "nav-link"

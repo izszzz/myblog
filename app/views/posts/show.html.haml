@@ -3,22 +3,37 @@
 
 %div.row
   %div.col-12.col-md-8.markdown
-    = markdown @post.body
+
+    %div.post-show-img
+      - @post.tags.each do |tag|
+        %i.fab{class: "fa-#{tag}"}
+
+    %small.text-muted
+      %i.fas.fa-upload.mr-3
+        = @post.created_at.strftime("%Y/%m/%d")
+      %i.fas.fa-redo-alt
+        = @post.updated_at.strftime("%Y/%m/%d")
+
+    %div.mt-5
+      = markdown @post.body
+
     %div.mt-5
       %i.fas.fa-folder-open
       = link_to @post.category[0], "#", class: "btn btn-secondary btn-sm"
       %i.fas.fa-tag
       - @post.tags.each do |tag|
         = link_to tag, "#", class: "btn btn-secondary btn-sm"
+
     %div.mt-5
       %div.btn-group
         - if admin_signed_in?    
           = link_to 'Edit', edit_post_path(@post), class: "btn btn-success"
         = link_to 'Back', posts_path, class: "btn btn-secondary"
-    %div
+
+    %div.mt-5
       = render "bottom-content", posts: @posts
-  %div.col-0.col-md-4
-    %div.container-fluid
-      = render "sidebar", posts: @posts
+
+  %div.col-0.col-md-4.d-none.d-md-block
+    = render "sidebar", posts: @posts
 
 
