@@ -13,6 +13,13 @@ class PostsController < ApplicationController
   def show
     @related_posts = Post.tagged_with(@post.tag_list, any: true).last(4)
     @latest_posts = Post.last(4)
+    @random_posts = Post.find(Post.pluck(:id).sample(4))
+  end
+
+  def tags
+  end
+
+  def categories
   end
 
   # GET /posts/new

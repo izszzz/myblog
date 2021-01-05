@@ -1,7 +1,7 @@
 - if notice
   %div#notice.alert.alert-primary= notice 
 
-%h1 記事一覧
+%h1.mb-5 記事一覧
 - @posts.each do |post|
   = render "posts/card/card", post: post
 
