@@ -533,7 +533,7 @@ DEPENDENCIES
   active_link_to
   acts-as-taggable-on
   bootsnap (>= 1.1.0)
-  bootstrap (~> 5.0.0.alpha3)
+  bootstrap (~> 5.0.0.alpha)
   byebug
   capybara (>= 2.15)
   carrierwave

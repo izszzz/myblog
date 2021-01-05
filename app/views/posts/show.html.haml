@@ -2,15 +2,23 @@
   %div#notice.alert.alert-primary= notice
 
 %div.row
-  %div.col.8.markdown
+  %div.col-12.col-md-8.markdown
     = markdown @post.body
-  %div.col-4
-    = render "sidebar", posts: @posts
+    %div.mt-5
+      %i.fas.fa-folder-open
+      = link_to @post.category[0], "#", class: "btn btn-secondary btn-sm"
+      %i.fas.fa-tag
+      - @post.tags.each do |tag|
+        = link_to tag, "#", class: "btn btn-secondary btn-sm"
+    %div.mt-5
+      %div.btn-group
+        - if admin_signed_in?    
+          = link_to 'Edit', edit_post_path(@post), class: "btn btn-success"
+        = link_to 'Back', posts_path, class: "btn btn-secondary"
+    %div
+      = render "bottom-content", posts: @posts
+  %div.col-0.col-md-4
+    %div.container-fluid
+      = render "sidebar", posts: @posts
 
-- if admin_signed_in?    
-  = link_to 'Edit', edit_post_path(@post), "btn btn-success"
-  |
-= link_to 'Back', posts_path, class: "btn btn-secondary"
 
-%div
-  = render "bottom-content", posts: @posts

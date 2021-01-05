@@ -1,8 +1,8 @@
-%div.card.mb-3
+= link_to post, class: "card mb-3 link_to-block" do
   %div.row.g-0
-    %div.col-md-4.post-card-img.sm-x
+    %div.col-md-0.col-lg-4.d-md-none.d-lg-flex.post-card-img.sm-x
       %i.fab{class: "fa-#{post.tags[0]}"}
-    %div.col-md-8
+    %div.col-md-12.col-lg-8
       %div.card-body
         %h6.card-title= post.title
         %small.text-muted
