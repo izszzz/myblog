@@ -18,7 +18,7 @@ EDITOR="vi" bin/rails credentials:edit
 
 ## Gems
 
-- [rouge](https://github.com/rouge-ruby/rouges)
+- [rouge](https://github.com/rouge-ruby/rouge)
 - [redcarpet](https://github.com/vmg/redcarpet)
 - [rspec-rails](https://github.com/rspec/rspec-rails)
 - [hamlit](https://github.com/k0kubun/hamlit)

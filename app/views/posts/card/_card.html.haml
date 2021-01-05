@@ -14,7 +14,7 @@
             = link_to tag, "#", class: "btn btn-secondary btn-sm"
         %div.d-flex.justify-content-end
           %div.btn-group
-            = link_to "Show", post, class: "btn btn-primary"
+            = link_to "Show", post, class: "btn btn-secondary"
             - if admin_signed_in?
               = link_to "Edit", edit_post_path(post), class: "btn btn-success"
               = link_to "Delete", post_path(post), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}

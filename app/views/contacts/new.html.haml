@@ -17,6 +17,14 @@
     = form.text_field :name, class: "form-control", placeholder: "Name"
 
   %div.mb-3
+    = form.label :email, class: "form-label"
+    = form.text_field :email, class: "form-control", placeholder: "Email"
+
+  %div.mb-3
+    = form.label :title, class: "form-label"
+    = form.text_field :title, class: "form-control", placeholder: "Title"
+
+  %div.mb-3
     = form.label :message, class: "form-label"
     = form.text_area :message, class: "form-control", placeholder: "Message"
 
