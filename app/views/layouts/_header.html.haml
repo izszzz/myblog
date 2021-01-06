@@ -3,14 +3,22 @@
 %header.mb-5
   %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
     %div.container-fluid
+
       = link_to "izszzz", root_path, class: "navbar-brand"
+
       %button.navbar-toggler{type: "button", "data-toggle" => "collapse", "data-target" => "#navbarToggler", "aria-controls" => "navbarToggler", "aria-expanded" => "false", "aria-label" => "Toggle navigation"}
         %span.navbar-toggler-icon
+
       %div#navbarToggler.collapse.navbar-collapse
-        %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+
+        %ul.navbar-nav.mr-auto
           - paths.each do |name, url|
             %li.nav-item= active_link_to name, url, active: :exact, class: "nav-link"
-          - if admin_signed_in?
-            %div.btn-group.float-right
-              = link_to 'New Post', new_post_path, class: "btn btn-primary"
-              = link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: "btn btn-danger"
+        
+        = search_form_for @header_q, class: "d-flex" do |f|
+          = f.search_field :title_or_tags_name_cont, class: "form-control", placeholder: "Search"
+          %div.btn-group
+            = f.submit class: "btn btn-secondary ml-1" 
+            - if admin_signed_in?
+              = link_to 'NewPost', new_post_path, class: "btn btn-primary", type: "button"
+              = link_to 'SignOut', destroy_admin_session_path, method: :delete, class: "btn btn-danger", type: "button"

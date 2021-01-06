@@ -13,7 +13,7 @@ docker-compose up
 ## Credentials
 
 ```cmd
-EDITOR="vi" bin/rails credentials:edit
+docker-compose run web rails credentials:edit
 ```
 
 ## Gems
@@ -33,3 +33,4 @@ EDITOR="vi" bin/rails credentials:edit
 - [google-api-client](https://github.com/googleapis/google-api-ruby-client)
 - [active_link_to](https://github.com/comfy/active_link_to)
 - [bootstrap](https://github.com/twbs/bootstrap-rubygem)
+- [ransack](https://github.com/activerecord-hackery/ransack)

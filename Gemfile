@@ -20,6 +20,7 @@ gem 'bootstrap', '~> 5.0.0.alpha'
 gem 'jquery-rails'
 gem 'active_link_to'
 gem 'font-awesome-sass'
+gem 'ransack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.4'

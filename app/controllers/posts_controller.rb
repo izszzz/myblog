@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true)
   end
 
   # GET /posts/1
@@ -16,10 +17,11 @@ class PostsController < ApplicationController
     @random_posts = Post.find(Post.pluck(:id).sample(4))
   end
 
-  def tags
+
+  def tag
   end
 
-  def categories
+  def category
   end
 
   # GET /posts/new

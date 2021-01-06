@@ -2,6 +2,11 @@
   %div#notice.alert.alert-primary= notice 
 
 %h1.mb-5 記事一覧
+
+= search_form_for @q, class: "d-flex mb-5" do |f|
+  = f.search_field :title_or_tags_name_cont, class: "form-control", placeholder: "Search"
+  = f.submit class: "btn btn-secondary ml-1" 
+
 - @posts.each do |post|
   = render "posts/card/card", post: post
 
