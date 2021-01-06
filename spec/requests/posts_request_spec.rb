@@ -14,10 +14,10 @@
 RSpec.describe "/posts", type: :request do
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
+  let(:admin) {create(:admin)}
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
   }
-
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
   }
@@ -39,10 +39,15 @@ RSpec.describe "/posts", type: :request do
   end
 
   describe "GET /new" do
-    login_admin
+    before {sign_in admin}
     it "renders a successful response" do
       get new_post_url
       expect(response).to be_successful
+    end
+
+    it "renders a failure response" do
+      get new_post_url
+      expect(response).to_not be_successful 
     end
   end
 
