@@ -12,6 +12,9 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @q = Post.ransack(params[:q])
+    @tags = Post.tags_on(:tags)
+    @categories = Post.tags_on(:categories)
     @related_posts = Post.tagged_with(@post.tag_list, any: true).last(4)
     @latest_posts = Post.last(4)
     @random_posts = Post.find(Post.pluck(:id).sample(4))

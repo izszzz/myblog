@@ -5,3 +5,15 @@
 %h4 最新記事
 - latest_posts.each do |post|
   = render "posts/card/card-sm-x", post: post
+
+
+%h4 カテゴリ 
+%div.list-group.mb-3
+  - categories.each do |category|
+    = link_to category.name, posts_path(q: {title_or_tags_name_or_categories_name_cont: category.name}), class: "list-group-item list-group-item-action" 
+
+%h4 タグ
+%div.list-group.mb-3
+  - tags.each do |tag|
+    = link_to tag.name, posts_path(q: {title_or_tags_name_or_categories_name_cont: tag.name}), class: "list-group-item list-group-item-action" 
+

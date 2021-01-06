@@ -32,5 +32,5 @@ docker-compose run web rails credentials:edit
 - [google-analytics-rails](https://github.com/bgarret/google-analytics-rails)
 - [google-api-client](https://github.com/googleapis/google-api-ruby-client)
 - [active_link_to](https://github.com/comfy/active_link_to)
-- [bootstrap](https://github.com/twbs/bootstrap-rubygem)
+- [bootstrap-rubygem](https://github.com/twbs/bootstrap-rubygem)
 - [ransack](https://github.com/activerecord-hackery/ransack)

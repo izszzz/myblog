@@ -19,7 +19,8 @@
 
     %div.mt-5
       %i.fas.fa-folder-open
-      = link_to @post.category[0], "#", class: "btn btn-secondary btn-sm"
+      - @post.categories.each do |category|
+        = link_to category, "#", class: "btn btn-secondary btn-sm"
       %i.fas.fa-tag
       - @post.tags.each do |tag|
         = link_to tag, "#", class: "btn btn-secondary btn-sm"
@@ -34,6 +35,6 @@
       = render "bottom-content", random_posts: @random_posts
 
   %div.col-0.col-md-4.d-none.d-md-block
-    = render "sidebar", posts: @posts, latest_posts: @latest_posts, related_posts: @related_posts
+    = render "sidebar", posts: @posts, latest_posts: @latest_posts, related_posts: @related_posts, tags: @tags, categories: @categories
 
 
