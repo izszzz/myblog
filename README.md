@@ -34,3 +34,4 @@ docker-compose run web rails credentials:edit
 - [active_link_to](https://github.com/comfy/active_link_to)
 - [bootstrap-rubygem](https://github.com/twbs/bootstrap-rubygem)
 - [ransack](https://github.com/activerecord-hackery/ransack)
+- [hover-rails](https://github.com/Leyka/hover-rails)

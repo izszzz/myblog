@@ -1,9 +1,10 @@
 %div.col
-  = link_to post, class: "card h-100 link_to-block" do 
-    %div.post-card-img.sm-y
-      %i.fab{class: "fa-#{post.tags[0]}"}
-    %div.card-body
-      %h6.card-title.text-truncate= post.title 
-      %p.card-text= post.summary
-    %div.card-footer
-      %small.text-muted= post.created_at.strftime("%Y/%m/%d")
+  = link_to post, class: "h-100 w-100 hvr-float link_to-block" do 
+    %div.card.h-100.w-100
+      %div.post-card-img.sm-y
+        %i.fab{class: "fa-#{post.tags[0]}"}
+      %div.card-body
+        %h6.card-title.text-truncate= post.title 
+        %p.card-text= post.summary
+      %div.card-footer
+        %small.text-muted= post.created_at.strftime("%Y/%m/%d")

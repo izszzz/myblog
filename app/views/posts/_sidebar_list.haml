@@ -1,0 +1,8 @@
+- list_group_item = "list-group-item list-group-item-action hvr-backward"
+
+%div.list-group.mb-5
+  - lists.each do |list|
+    = link_to posts_path(q: {title_or_tags_name_or_categories_name_cont: list.name}), class: list_group_item do
+      = list.name
+      %span.badge.bg-secondary.float-right= list.taggings_count
+  = link_to "タグ一覧", posts_tags_path, class: list_group_item

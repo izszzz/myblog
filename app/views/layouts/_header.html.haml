@@ -1,4 +1,4 @@
-- paths = {"Home" => root_path, "Posts" => posts_path, "Contact" => new_contact_path}
+- paths = [["Home",root_path], ["Posts",  posts_path], ["Contact", new_contact_path]]
 
 %header.mb-5
   %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
@@ -13,7 +13,7 @@
 
         %ul.navbar-nav.mr-auto
           - paths.each do |name, url|
-            %li.nav-item= active_link_to name, url, active: :exact, class: "nav-link"
+            %li.nav-item.hvr-underline-from-center= active_link_to name, url, active: :exact, class: "nav-link"
         
         = search_form_for @header_q, class: "d-flex" do |f|
           = f.search_field :title_or_tags_name_or_categories_name_cont, class: "form-control", placeholder: "Search"
