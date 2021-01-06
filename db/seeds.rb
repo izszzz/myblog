@@ -486,7 +486,7 @@ EOS
 
 Post.create(
   category_list: "Tech",
-  tag_list: "bootstrap, gem",
+  tag_list: "bootstrap",
   title: "bootstrap-rubygem-v5.0.0.alpha3の注意点",
   summary: "bootstrap-rubygem-v5.0.0.alpha3でJSがうまく動かない場合の解決方法",
   body:  <<-EOS

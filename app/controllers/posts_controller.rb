@@ -83,7 +83,7 @@ class PostsController < ApplicationController
     end
 
     def set_tags
-      @tags = Post.tags_on(:tags)
+      @tags = Post.tags_on(:tags).last(5)
     end
 
     def set_categories
@@ -91,6 +91,6 @@ class PostsController < ApplicationController
     end
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body).last(5)
+      params.require(:post).permit(:title, :body)
     end
 end

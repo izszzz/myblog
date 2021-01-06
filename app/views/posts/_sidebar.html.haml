@@ -1,21 +1,23 @@
+- list_group_item = "list-group-item list-group-item-action"
+- card_sm_x_path = "posts/card/card-sm-x"
+
 %h4 関連記事
 - related_posts.each do |post|
-  = render "posts/card/card-sm-x", post: post
+  = render card_sm_x_path, post: post
 
 %h4 最新記事
 - latest_posts.each do |post|
-  = render "posts/card/card-sm-x", post: post
-
+  = render card_sm_x_path, post: post
 
 %h4 カテゴリ 
 %div.list-group.mb-3
   - categories.each do |category|
-    = link_to category.name, posts_path(q: {title_or_tags_name_or_categories_name_cont: category.name}), class: "list-group-item list-group-item-action" 
-  = link_to "カテゴリ一覧", posts_categories_path, class: "list-group-item list-group-item list-group-item-action"
+    = link_to category.name, posts_path(q: {title_or_tags_name_or_categories_name_cont: category.name}), class: list_group_item
+  = link_to "カテゴリ一覧", posts_categories_path, class: list_group_item
 
 %h4 タグ
 %div.list-group.mb-3
   - tags.each do |tag|
-    = link_to tag.name, posts_path(q: {title_or_tags_name_or_categories_name_cont: tag.name}), class: "list-group-item list-group-item-action" 
-  = link_to "タグ一覧", posts_tags_path, class: "list-group-item list-group-item list-group-item-action"
+    = link_to tag.name, posts_path(q: {title_or_tags_name_or_categories_name_cont: tag.name}), class: list_group_item
+  = link_to "タグ一覧", posts_tags_path, class: list_group_item
 
