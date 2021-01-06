@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_admin!, only: %i[new edit create update destroy]
+  before_action :set_tags, only: %i[show tags]
+  before_action :set_categories, only: %i[show categories]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -13,18 +15,16 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @q = Post.ransack(params[:q])
-    @tags = Post.tags_on(:tags)
-    @categories = Post.tags_on(:categories)
     @related_posts = Post.tagged_with(@post.tag_list, any: true).last(4)
     @latest_posts = Post.last(4)
     @random_posts = Post.find(Post.pluck(:id).sample(4))
   end
 
 
-  def tag
+  def tags
   end
 
-  def category
+  def categories
   end
 
   # GET /posts/new
@@ -82,8 +82,15 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
+    def set_tags
+      @tags = Post.tags_on(:tags)
+    end
+
+    def set_categories
+      @categories = Post.tags_on(:categories).last(5)
+    end
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body).last(5)
     end
 end

@@ -1,7 +1,7 @@
 - if notice
   %div#notice.alert.alert-primary= notice 
 
-%h1.mb-5 記事一覧
+%h1.mb-5 Posts
 
 = search_form_for @q, class: "d-flex mb-5" do |f|
   = f.search_field :title_or_tags_name_or_categories_name_cont, class: "form-control", placeholder: "Search"

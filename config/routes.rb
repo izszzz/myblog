@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'static_pages/about'
 
   get "posts/tags"
-  get "posts/category"
+  get "posts/categories"
   resources :posts, :contacts
   resources :contacts, only: [:new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
