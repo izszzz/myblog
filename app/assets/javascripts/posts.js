@@ -1,15 +1,18 @@
 $(function(){
     const dataList = function(req, res) {
-        console.log(req)
         $.ajax({
-            url: "/posts/autocomplete/?utf8=✓&q%5Btitle_or_tags_name_or_categories_name_cont%5D="+req.term,
+            url: "/posts/autocomplete",
             dataType: "json",
             type: "GET",
             cache: true,
+            data: {
+                q: {
+                    title_or_tags_name_cont: req.term
+                }
+            },
             success: function(posts){
-                console.log(posts)
                 const postTitles=posts.map(({title})=>title)
-                res(postTitles)
+                res(posts)
             },
             error: function(){
                 res([""])
@@ -17,5 +20,10 @@ $(function(){
         })
     }
 
-    $(".post-autocomplete").each((_, e)=>$(e).autocomplete({source: dataList, delay: 300, minLength: 2}))
+    $(".post-autocomplete").each((_, e)=>$(e).autocomplete({source: dataList, delay: 300, minLength: 2})
+        .data("ui-autocomplete")._renderItem = function(ul, item){
+            return $(`<a href="/posts/${item.id}" class="list-group-item list-group-item-action fab fa-${item.tag_list[0]} autocomplete-link">${item.title}</a>`)
+                .appendTo(ul.addClass("list-group"))
+        }
+    )
 })
