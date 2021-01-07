@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     sessions: 'admins/sessions'
   }
   root 'static_pages#home'
-  get 'static_pages/home'
   get 'static_pages/privacy'
   get 'static_pages/about'
 

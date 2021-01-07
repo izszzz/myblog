@@ -1,3 +1,5 @@
+- tag_lists = [["folder-open", "カテゴリー", post.categories], ["tag", "タグ", post.tags]]
+
 %div.card.mb-3.w-100.hvr-backward
   %div.row.g-0
     %div.col-md-4.post-card-img
@@ -6,14 +8,8 @@
       %div.card-body
         %h5.card-title= post.title
         %p.card-text= post.summary
-
         %small.text_muted
-          %i.fas.fa-folder-open
-          - post.categories.each do |category|
-            = link_to category, posts_path(q: {title_or_tags_name_or_categories_name_cont: category.name}), class: "btn btn-secondary btn-sm" 
-          %i.fas.fa-tag
-          - post.tags.each do |tag|
-            = link_to tag, posts_path(q: {title_or_tags_name_or_categories_name_cont: tag.name}), class: "btn btn-secondary btn-sm" 
+          = render "tag_lists", tag_lists: tag_lists
 
         %div.d-flex.justify-content-end
           %div.btn-group

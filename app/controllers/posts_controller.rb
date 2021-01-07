@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_admin!, only: %i[new edit create update destroy]
-  before_action :set_tags, only: %i[show tags]
+  before_action :set_tags, only: %i[show tags index]
   before_action :set_categories, only: %i[show categories]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
@@ -9,16 +9,23 @@ class PostsController < ApplicationController
   def index
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true).page(params[:page])
+    set_meta_tags title: "Posts",
+      description: "記事一覧"
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @tags = @tags.last(8)
+    @categories = @categories.last(8)
     @q = Post.ransack(params[:q])
     @related_posts = Post.tagged_with(@post.tag_list, any: true).last(4)
     @latest_posts = Post.last(4)
     @random_posts = Post.find(Post.pluck(:id).sample(4))
+    set_meta_tags title: @post.title,
+      description: @post.summary
   end
+
   def autocomplete
     q = Post.ransack(params[:q])
     posts = q.result(distinct: true).last(5)
@@ -87,11 +94,11 @@ class PostsController < ApplicationController
     end
 
     def set_tags
-      @tags = Post.tags_on(:tags).last(5)
+      @tags = Post.tags_on(:tags)
     end
 
     def set_categories
-      @categories = Post.tags_on(:categories).last(5)
+      @categories = Post.tags_on(:categories)
     end
     # Only allow a list of trusted parameters through.
     def post_params

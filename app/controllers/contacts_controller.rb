@@ -2,6 +2,9 @@ class ContactsController < ApplicationController
 
     def new
         @contact = Contact.new
+        set_meta_tags title: "Contact",
+            description: "お問い合わせフォーム",
+            noindex: true
     end
 
     def create

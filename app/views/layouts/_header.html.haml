@@ -1,4 +1,4 @@
-- paths = [["Home",root_path], ["Posts",  posts_path], ["Contact", new_contact_path]]
+- paths = [["Home", root_path], ["About", static_pages_about_path], ["Posts",  posts_path], ["Contact", new_contact_path]]
 
 %header.mb-5
   %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
@@ -16,7 +16,7 @@
             %li.nav-item.hvr-underline-from-center= active_link_to name, url, active: :exact, class: "nav-link"
         
         = search_form_for @header_q, class: "d-flex", local: true do |f|
-          = f.search_field :title_or_tags_name_cont, class: "form-control post-autocomplete", placeholder: "Search"
+          = f.search_field :title_or_tags_name_cont, class: "form-control", placeholder: "Search", autocomplete: "off"
           %div.btn-group
             = f.submit class: "btn btn-secondary ml-1" 
             - if admin_signed_in?

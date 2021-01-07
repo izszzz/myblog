@@ -1,0 +1,5 @@
+- tag_lists.each do |classname, name, tags|
+  %i.fas{class: "fa-#{classname}"}
+    = name
+  - tags.each do |tag|
+    = link_to tag, posts_path(q: {tags_name_or_categories_name_cont: tag.name}), class: "btn btn-secondary btn-sm"

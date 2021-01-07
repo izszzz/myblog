@@ -1,29 +1,24 @@
+- tag_lists = [["folder-open", "カテゴリー", @post.categories], ["tag", "タグ", @post.tags]]
+
 - if notice
   %div#notice.alert.alert-primary= notice
 
 %div.row
   %div.col-12.col-md-8.markdown
 
-    %div.post-show-img
+    %div.post-show-img.mb-3
       - @post.tags.each do |tag|
         %i.fab{class: "fa-#{tag}"}
 
     %small.text-muted
       %i.fas.fa-upload.mr-3
         = @post.created_at.strftime("%Y/%m/%d")
-      %i.fas.fa-redo-alt
+      %i.fas.fa-redo-alt.mr-3
         = @post.updated_at.strftime("%Y/%m/%d")
+      = render "tag_lists", tag_lists: tag_lists
 
-    %div.mt-5
+    %div.mt-3
       = markdown @post.body
-
-    %div.mt-5
-      %i.fas.fa-folder-open
-      - @post.categories.each do |category|
-        = link_to category, "#", class: "btn btn-secondary btn-sm"
-      %i.fas.fa-tag
-      - @post.tags.each do |tag|
-        = link_to tag, "#", class: "btn btn-secondary btn-sm"
 
     %div.mt-5
       %div.btn-group
