@@ -19,7 +19,11 @@ class PostsController < ApplicationController
     @latest_posts = Post.last(4)
     @random_posts = Post.find(Post.pluck(:id).sample(4))
   end
-
+  def autocomplete
+    q = Post.ransack(params[:q])
+    posts = q.result(distinct: true).last(5)
+    render json: posts
+  end
 
   def tags
   end
@@ -93,4 +97,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :body)
     end
+
 end

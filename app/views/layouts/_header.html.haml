@@ -15,8 +15,8 @@
           - paths.each do |name, url|
             %li.nav-item.hvr-underline-from-center= active_link_to name, url, active: :exact, class: "nav-link"
         
-        = search_form_for @header_q, class: "d-flex" do |f|
-          = f.search_field :title_or_tags_name_or_categories_name_cont, class: "form-control", placeholder: "Search"
+        = search_form_for @header_q, class: "d-flex", local: true do |f|
+          = f.search_field :title_or_tags_name_or_categories_name_cont, class: "form-control post-autocomplete", placeholder: "Search"
           %div.btn-group
             = f.submit class: "btn btn-secondary ml-1" 
             - if admin_signed_in?
