@@ -1,9 +1,9 @@
 - tag_lists = [["folder-open", "カテゴリー", post.categories], ["tag", "タグ", post.tags]]
 
-%div.card.mb-3.w-100.hvr-backward
+%div.card.w-100.mb-3.hvr-backward
   %div.row.g-0
-    %div.col-md-4.post-card-img
-      %i.fab{class: "fa-#{post.tags[0]}"}
+    %div.col-md-4.d-flex.justify-content-center.align-items-center.bg-secondary.text-white.post-card-img
+      %i.fab.my-5.display-1{class: "fa-#{post.tags[0]}"}
     %div.col-md-8
       %div.card-body
         %h5.card-title= post.title

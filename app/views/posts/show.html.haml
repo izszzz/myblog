@@ -1,34 +1,59 @@
 - tag_lists = [["folder-open", "カテゴリー", @post.categories], ["tag", "タグ", @post.tags]]
+- dates = [["upload", @post.created_at], ["redo-alt", @post.updated_at]]
 
 - if notice
   %div#notice.alert.alert-primary= notice
 
 %div.row
+
   %div.col-12.col-md-8.markdown
 
-    %div.post-show-img.mb-3
+    %div.d-flex.justify-content-around.align-items-center.w-100.mb-3.bg-secondary.text-white.post-show-img
       - @post.tags.each do |tag|
-        %i.fab{class: "fa-#{tag}"}
+        %i.fab.display-1{class: "fa-#{tag}"}
+    - if admin_signed_in?    
+      = link_to 'Edit', edit_post_path(@post), class: "btn btn-success w-100"
 
-    %small.text-muted
-      %i.fas.fa-upload.mr-3
-        = @post.created_at.strftime("%Y/%m/%d")
-      %i.fas.fa-redo-alt.mr-3
-        = @post.updated_at.strftime("%Y/%m/%d")
-      = render "tag_lists", tag_lists: tag_lists
+    %p
+      %small.text-muted
+        - dates.each do |classname, date|
+          %i.fas.mr-3{class: "fa-#{classname}"}
+            = @post.created_at.strftime("%Y/%m/%d")
+    %p
+      %small.text-muted
+        = render "tag_lists", tag_lists: tag_lists
 
     %div.mt-3
       = markdown @post.body
 
-    %div.mt-5
-      %div.btn-group
-        - if admin_signed_in?    
-          = link_to 'Edit', edit_post_path(@post), class: "btn btn-success"
-        = link_to 'Back', posts_path, class: "btn btn-secondary"
+    %div.container-fluid.mt-5
+      %div.row
+        -if prev_post = @post.prev
+          = link_to prev_post, class: "card col-5 link_to-block hvr-backward" do
+            %div.row
+              %div.col-0.col-lg-4.d-none.d-lg-flex.justify-content-center.align-items-center.bg-secondary.text-white
+                %i.fab.display-5{class: "fa-#{prev_post.tags[0]}"}
+              %div.col-12.col-lg-8
+                %div.card-body
+                  %h6 
+                    Prev : 
+                    = prev_post.title
+        -else
+          %div.col-5
+
+        -if next_post = @post.next
+          = link_to next_post, class: "card col-5 offset-2 link_to-block hvr-forward" do
+            %div.row
+              %div.col-12.col-lg-8
+                %div.card-body
+                  %h6
+                    Next : 
+                    = next_post.title
+              %div.col-0.col-lg-4.d-none.d-lg-flex.justify-content-center.align-items-center.bg-secondary.text-white
+                %i.fab.display-5{class: "fa-#{next_post.tags[0]}"}
 
     %div.mt-5
       = render "bottom-content", random_posts: @random_posts
-
   %div.col-0.col-md-4.d-none.d-md-block
     = render "sidebar", posts: @posts, latest_posts: @latest_posts, related_posts: @related_posts, tags: @tags, categories: @categories
 

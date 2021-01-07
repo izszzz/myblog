@@ -1,8 +1,8 @@
-%div.col
+%div.col-6
   = link_to post, class: "h-100 w-100 hvr-float link_to-block" do 
     %div.card.h-100.w-100
-      %div.post-card-img.sm-y
-        %i.fab{class: "fa-#{post.tags[0]}"}
+      %div.sm-y.d-flex.justify-content-center.align-items-center.bg-secondary.text-white{style: "height: 100px"}
+        %i.fab.my-5.display-5{class: "fa-#{post.tags[0]}"}
       %div.card-body
         %h6.card-title.text-truncate= post.title 
         %p.card-text= post.summary

@@ -1,7 +1,9 @@
 - if notice
   %div#notice.alert.alert-primary= notice
 
-%h1.mb-5 Contact
+%h1 Contact
+%p
+  ブログに関する問い合わせ以外にも、お仕事の依頼、質問なども受け付けています。
 
 = form_with(model: @contact, local: true) do |form| 
   - if @contact.errors.any? 
