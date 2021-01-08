@@ -7,13 +7,13 @@
     %div.col-md-8
       %div.card-body
         %h5.card-title= post.title
-        %p.card-text= post.summary
+        %p.card-text.text-muted= post.summary
         %small.text_muted
           = render "tag_lists", tag_lists: tag_lists
 
         %div.d-flex.justify-content-end
+          = link_to "Show", post, class: "btn btn-secondary stretched-link"
           %div.btn-group
-            = link_to "Show", post, class: "btn btn-secondary"
             - if admin_signed_in?
               = link_to "Edit", edit_post_path(post), class: "btn btn-success"
               = link_to "Delete", post_path(post), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}

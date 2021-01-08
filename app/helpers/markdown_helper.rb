@@ -20,9 +20,6 @@ module MarkdownHelper
         %(<h6 id='#{query}' class='mt-5 border-bottom'>#{text}</h6>)
       end 
     end
-    def highlight(text)
-      %(<div class='my-5'>#{text}</div>)
-    end
   end
   
 

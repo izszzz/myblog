@@ -31,7 +31,7 @@
     %div.container-fluid.mt-5
       %div.row
         -if prev_post = @post.prev
-          = link_to prev_post, class: "card col-5 h-100 link_to-block hvr-backward" do
+          %div.col-5.card.h-100.hvr-backward
             %div.row
               %div.col-0.col-lg-4.d-none.d-lg-flex.justify-content-center.align-items-center.bg-secondary.text-white
                 %i.fab.display-5{class: "fa-#{prev_post.tags[0]}"}
@@ -39,18 +39,18 @@
                 %div.card-body
                   %h6 
                     Prev : 
-                    = prev_post.title
+                    = link_to prev_post.title, prev_post, class: "text-body stretched-link" 
         -else
           %div.col-5
 
         -if next_post = @post.next
-          = link_to next_post, class: "card col-5 h-100 offset-2 link_to-block hvr-forward" do
+          %div.col-5.card.h-100.offset-2.hvr-forward
             %div.row
               %div.col-12.col-lg-8
                 %div.card-body
-                  %h6
+                  %h6.card-title
                     Next : 
-                    = next_post.title
+                    = link_to next_post.title, next_post, class: "text-body stretched-link"
               %div.col-0.col-lg-4.d-none.d-lg-flex.justify-content-center.align-items-center.bg-secondary.text-white
                 %i.fab.display-5{class: "fa-#{next_post.tags[0]}"}
 
