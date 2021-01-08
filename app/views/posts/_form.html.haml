@@ -1,6 +1,6 @@
 = form_with(model: post, local: true) do |form| 
   - if post.errors.any? 
-    %div#error_explanation
+    %div.alert.alert-danger{role: "alert"}
       %h2
         = pluralize(post.errors.count, "error") 
         prohibited this post from being saved:
@@ -13,8 +13,20 @@
     = form.text_field :title, class: "form-control", placeholder: "title"
 
   %div.mb-3
+    = form.label :summary, class: "form-label"
+    = form.text_field :summary, class: "form-control", placeholder: "summary"
+
+  %div.mb-3
+    = form.label :category_list, class: "form-label tagsinput"
+    = form.text_field :category_list, class: "form-control",placeholder: "tag", data:{role: "tagsinput"}
+
+  %div.mb-3
+    = form.label :tag_list, class: "form-label tagsinput"
+    = form.text_field :tag_list, class: "form-control", placeholder: "category", data:{role: "tagsinput"}
+
+  %div.mb-3
     = form.label :body, class: "form-label"
-    = form.text_field :body, class: "form-control", placeholder: "body"
+    = form.text_area :body, class: "form-control", placeholder: "body"
 
   %div.actions
-    = form.submit class:"btn btn-primary"
+    = form.button class:"btn btn-primary", type: "button", onclick: "submit();"

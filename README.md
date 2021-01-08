@@ -38,3 +38,4 @@ docker-compose run web rails credentials:edit
 - [google-api-client](https://github.com/googleapis/google-api-ruby-client)
 - [sitemap_generator](https://github.com/adamsalter/sitemap_generator)
 - [whenever](https://github.com/javan/whenever)
+- [bootstrap4-tagsinput](https://github.com/Nodws/bootstrap4-tagsinput)
