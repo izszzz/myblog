@@ -31,7 +31,7 @@
     %div.container-fluid.mt-5
       %div.row
         -if prev_post = @post.prev
-          = link_to prev_post, class: "card col-5 link_to-block hvr-backward" do
+          = link_to prev_post, class: "card col-5 h-100 link_to-block hvr-backward" do
             %div.row
               %div.col-0.col-lg-4.d-none.d-lg-flex.justify-content-center.align-items-center.bg-secondary.text-white
                 %i.fab.display-5{class: "fa-#{prev_post.tags[0]}"}
@@ -44,7 +44,7 @@
           %div.col-5
 
         -if next_post = @post.next
-          = link_to next_post, class: "card col-5 offset-2 link_to-block hvr-forward" do
+          = link_to next_post, class: "card col-5 h-100 offset-2 link_to-block hvr-forward" do
             %div.row
               %div.col-12.col-lg-8
                 %div.card-body
