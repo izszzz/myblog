@@ -16,15 +16,15 @@
 %div#accordionLang.accordion
 
   %div.accordion-item
-    %h6#headingOne.accordion-header
+    %h6#headingOne.accordion-header.bg-white
       %button.accordion-button{type: "button", "data-toggle" => "collapse", "data-target" => "#collapseOne", "aria-expanded" => "true", "aria-controls" => "collapseOne"} Ruby
     %div#collapseOne.accordion-collapse.collapse.show{"aria-labelledby" => "headingOne", "data-parent" => "#accordionLang"}
       %div.accordion-body.bg-white
-        %ul.list-group.bg-white
+        %ul.list-group
           %li.list-group-item Ruby on Rails(API)
 
   %div.accordion-item
-    %h6#headingTwo.accordion-header
+    %h6#headingTwo.accordion-header.bg-white
       %button.accordion-button.collapsed{type: "button", "data-toggle" => "collapse", "data-target" => "#collapseTwo", "aria-expanded" => "false", "aria-controls" => "collapseTwo"} Node.js
     %div#collapseTwo.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-parent" => "#accordionLang"}
       %div.accordion-body.bg-white
@@ -37,7 +37,7 @@
           %li.list-group-item ReduxToolkit
 
   %div.accordion-item
-    %h6#headingThree.accordion-header
+    %h6#headingThree.accordion-header.bg-white
       %button.accordion-button.collapsed{type: "button", "data-toggle" => "collapse", "data-target" => "#collapseThree", "aria-expanded" => "", "aria-controls" => "collapseThree"} Python
     %div#collapseThree.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-parent" => "#accordionLang"}
       %div.accordion-body.bg-white
@@ -46,12 +46,3 @@
           %li.fab.fa-raspberry-pi.list-group-item=" Raspberry pi"
           %li.list-group-item pybleno
 
-  %div.accordion-item
-    %h6#headingThree.accordion-header
-      %button.accordion-button.collapsed{type: "button", "data-toggle" => "collapse", "data-target" => "#collapseThree", "aria-expanded" => "", "aria-controls" => "collapseThree"} Python
-    %div#collapseThree.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-parent" => "#accordionLang"}
-      %div.accordion-body.bg-white
-        %ul.list-group
-          %li.list-group-item Flask
-          %li.fab.fa-raspberry-pi.list-group-item=" Raspberry pi"
-          %li.list-group-item pybleno
