@@ -1,3 +1,5 @@
+- links = [[" Github", "https://github.com/izszzz", "fa-github"],  [" Twitter", "https://github.com/izszzz", "fa-twitter"], ["MENTA", "https://github.com/izszzz", ""], ["Carbonmade", "https://github.com/izszzz", ""]]
+
 %h1 iz profile
 %ul.list-group
   %li.list-group-item 2000/10/5
@@ -6,10 +8,8 @@
 
 %h2.mt-5 Link
 %ul.list-group
-  = link_to " Github", "https://github.com/izszzz", class: "fab fa-github list-group-item list-group-item-action"
-  = link_to "MENTA", "https://menta.work/user/14528", class: "list-group-item list-group-item-action"
-  = link_to " Twitter", "https://twitter.com/izszzz_", class: "fab fa-twitter list-group-item list-group-item-action"
-  = link_to "Carbonmade", "https://izszzz.carbonmade.com/", class: "list-group-item list-group-item-action"
+  - links.each do |name, path, classname|
+    = link_to name, path, class: "fab list-group-item list-group-item-action " + classname
 
 %h2.mt-5 Skill
 

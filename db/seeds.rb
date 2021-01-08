@@ -231,16 +231,12 @@ Post.create(
   title: "bluetoothctlのpairは成功するが、connectが失敗する",
   summary: "RaspberryPiのbluetoothctlコマンドのconnectが失敗するときの解決方法",
   body: <<-EOS
-# bluetoothctlのpairは成功するが、connectが失敗する
-
-RaspberryPiのbluetoothctlコマンドのconnectが失敗するときの解決方法
-
 - [bluetoothctlのpairは成功するが、connectが失敗する](#bluetoothctlのpairは成功するがconnectが失敗する)
-    - [はじめに](#はじめに)
-    - [connectが失敗する](#connectが失敗する)
-    - [解決策](#解決策)
-      - [`sap-server: Operation not permitted (1)` が表示された場合](#sap-server-operation-not-permitted-1-が表示された場合)
-      - [`a2dp-source profile connect failed for Protocol not available`　が表示された場合](#a2dp-source-profile-connect-failed-for-protocol-not-availableが表示された場合)
+  - [はじめに](#はじめに)
+  - [connectが失敗する](#connectが失敗する)
+  - [解決策](#解決策)
+    - [sap-server: Operation not permitted (1)が表示された場合](#sap-server-operation-not-permitted-1が表示された場合)
+    - [a2dp-source profile connect failed for Protocol not availableが表示された場合](#a2dp-source-profile-connect-failed-for-protocol-not-availableが表示された場合)
 
 ## はじめに
 
@@ -273,7 +269,7 @@ Dec 31 13:50:55  bluetoothd[351]: a2dp-source profile connect failed for 38:F9:D
 Dec 31 13:59:10  systemd[1]: bluetooth.service: Current command vanished from the unit file, execution of the command list won't be resumed.
 ```
 
-### `sap-server: Operation not permitted (1)` が表示された場合
+### sap-server: Operation not permitted (1)が表示された場合
 
 `/etc/systemd/system/bluetooth.target.wants/bluetooth.service`を変更
 
@@ -296,7 +292,7 @@ sudo service bluetooth restart
 
 [参考][1]
 
-### `a2dp-source profile connect failed for Protocol not available`　が表示された場合
+### a2dp-source profile connect failed for Protocol not availableが表示された場合
 
 pulseaudio-module-bluetoothパッケージをインストール
 
@@ -340,7 +336,7 @@ RaspberryPi Zeroでpybluez[ble]のgattlibのインストールに失敗したと
   - [発生したエラー](#発生したエラー)
   - [解決](#解決)
     - [スワップファイルサイズを変更する](#スワップファイルサイズを変更する)
-      - [`/etc/dphys-swapfile`を変更する](#etcdphys-swapfileを変更する)
+      - [/etc/dphys-swapfileを変更する](#etcdphys-swapfileを変更する)
       - [スワップファイルの再起動](#スワップファイルの再起動)
     - [インストールをする](#インストールをする)
       - [pybluez[ble]をインストールし、gattlibのバージョンを確認する](#pybluezbleをインストールしgattlibのバージョンを確認する)
@@ -380,7 +376,7 @@ $ dmesg
 
 [こちらの記事][4]を参考にする。
 
-#### `/etc/dphys-swapfile`を変更する
+#### /etc/dphys-swapfileを変更する
 
 ```cmd
 sudo vi /etc/dphys-swapfile

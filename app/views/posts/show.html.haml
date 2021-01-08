@@ -6,13 +6,10 @@
 
 %div.row
 
-  %div.col-12.col-md-8.markdown
-
+  %div.col-12.col-md-8
     %div.d-flex.justify-content-around.align-items-center.w-100.mb-3.bg-secondary.text-white.post-show-img
       - @post.tags.each do |tag|
         %i.fab.display-1{class: "fa-#{tag}"}
-    - if admin_signed_in?    
-      = link_to 'Edit', edit_post_path(@post), class: "btn btn-success w-100"
 
     %p
       %small.text-muted
@@ -23,8 +20,13 @@
       %small.text-muted
         = render "tag_lists", tag_lists: tag_lists
 
-    %div.mt-3
-      = markdown @post.body
+    %div.bg-white.border.p-3
+      - if admin_signed_in?    
+        = link_to 'Edit', edit_post_path(@post), class: "btn btn-success w-100"
+
+
+      %div.mt-3
+        = markdown @post.body
 
     %div.container-fluid.mt-5
       %div.row
