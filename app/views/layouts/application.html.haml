@@ -4,8 +4,11 @@
     = csrf_meta_tags 
     = csp_meta_tag 
 
-    = analytics_init if Rails.env.production?
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
+
+    = analytics_init if Rails.env.production?
+    %script{ "data-ad-client" => "ca-pub-2292531594226333",  async: "" src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+
     = display_meta_tags site: 'izszzz blog'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
