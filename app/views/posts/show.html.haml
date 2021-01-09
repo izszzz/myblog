@@ -27,6 +27,7 @@
 
       %div.mt-3
         = markdown @post.body
+        = social_share_button_tag(@post.title, allow_sites: %w(twitter facebook google_bookmark tumblr pinterest email reddit hacker_news))
 
     %div.container-fluid.mt-5
       %div.row

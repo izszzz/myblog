@@ -39,3 +39,4 @@ docker-compose run web rails credentials:edit
 - [sitemap_generator](https://github.com/adamsalter/sitemap_generator)
 - [whenever](https://github.com/javan/whenever)
 - [bootstrap4-tagsinput](https://github.com/Nodws/bootstrap4-tagsinput)
+- [social-share-button](https://github.com/huacnlee/social-share-button)

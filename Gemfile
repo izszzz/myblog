@@ -24,6 +24,7 @@ gem 'sitemap_generator'
 gem 'meta-tags'
 gem 'google-analytics-rails'
 gem 'google-api-client'
+gem 'social-share-button'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
