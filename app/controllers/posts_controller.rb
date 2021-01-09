@@ -19,9 +19,6 @@ class PostsController < ApplicationController
     @tags = @tags.last(8)
     @categories = @categories.last(8)
     @q = Post.ransack(params[:q])
-    @related_posts = Post.tagged_with(@post.tag_list, any: true).last(4)
-    @latest_posts = Post.last(4)
-    @random_posts = Post.find(Post.pluck(:id).sample(4))
     set_meta_tags title: @post.title,
       description: @post.summary
   end

@@ -55,8 +55,8 @@
                 %i.fab.display-5{class: "fa-#{next_post.tags[0]}"}
 
     %div.mt-5
-      = render "bottom-content", random_posts: @random_posts
+      = render "bottom-content", random_posts: @post.random
   %div.col-0.col-md-4.d-none.d-md-block
-    = render "sidebar", posts: @posts, latest_posts: @latest_posts, related_posts: @related_posts, tags: @tags, categories: @categories
+    = render "sidebar", post: @post, tags: @tags, categories: @categories
 
 

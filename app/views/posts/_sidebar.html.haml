@@ -1,12 +1,11 @@
-- posts = [["関連記事", related_posts], ["最新記事", latest_posts]]
+- posts = [["関連記事", post.related], ["最新記事", post.latest]]
 - lists = [["カテゴリー", categories], ["タグ", tags]]
 
 - posts.each do |title, posts|
   %h4.mb-2.border-bottom= title
-  %div.mb-5
-    - posts.each do |post|
-      = render "posts/card/card-sm-x", post:post
+  - posts.each do |post|
+    = render "posts/card/card-sm-x", post:post
 
 -lists.each do |title, lists|
-  %h4.mb-2.border-bottom= title
+  %h4.mt-5.mb-2.border-bottom= title
   = render "sidebar_list", lists: lists
