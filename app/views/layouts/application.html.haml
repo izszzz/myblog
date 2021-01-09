@@ -6,7 +6,13 @@
 
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
     - if Rails.env.production?
-      = analytics_init if GoogleAnalytics.valid_tracker?
+      %script{async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-CZ1BWE20CB"}
+      :javascript
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CZ1BWE20CB');
+
       %script{ "data-ad-client" => "ca-pub-2292531594226333",  async: "", src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
     
 
