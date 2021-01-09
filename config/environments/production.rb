@@ -102,5 +102,4 @@ Rails.application.configure do
       enable_starttls_auto:  true
   }
 
-  GA.tracker = Rails.application.credentials.google_analytics[:tracker]
 end
