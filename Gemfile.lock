@@ -290,7 +290,6 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    google-analytics-rails (1.1.1)
     google-api-client (0.50.0)
       addressable (~> 2.5, >= 2.5.1)
       googleauth (~> 0.9)
@@ -561,7 +560,6 @@ DEPENDENCIES
   factory_bot_rails
   fog
   font-awesome-sass
-  google-analytics-rails
   google-api-client
   hamlit
   hover-rails
