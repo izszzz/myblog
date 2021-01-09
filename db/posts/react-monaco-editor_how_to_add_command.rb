@@ -1,6 +1,6 @@
 Post.create(
   category_list: "Tech",
-  tag_list: "react, js",
+  tag_list: "react, javascript",
   title: "react-monaco-editorでaddCommandを使う",
   summary: "react-monaco-editorでaddCommandを使うときの注意点",
   body: <<-EOS

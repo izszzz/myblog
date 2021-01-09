@@ -34,7 +34,6 @@ docker-compose run web rails credentials:edit
 - [hover-rails](https://github.com/Leyka/hover-rails)
 - [jquery-ui-rails](https://github.com/jquery-ui-rails/jquery-ui-rails)
 - [meta-tags](https://github.com/kpumuk/meta-tags)
-- [google-analytics-rails](https://github.com/bgarret/google-analytics-rails)
 - [google-api-client](https://github.com/googleapis/google-api-ruby-client)
 - [sitemap_generator](https://github.com/adamsalter/sitemap_generator)
 - [whenever](https://github.com/javan/whenever)

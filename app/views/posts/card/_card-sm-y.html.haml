@@ -1,7 +1,7 @@
 %div.col-6
   %div.card.h-100.w-100
     %div.sm-y.d-flex.justify-content-center.align-items-center.bg-secondary.text-white{style: "height: 100px"}
-      %i.fab.my-5.display-5{class: "fa-#{post.tags[0]}"}
+      %i.my-5.display-5{class: "devicon-#{post.tags[0]}-plain"}
     %div.card-body
       %h6.card-title.text-truncate= link_to post.title, post, class: "text-body stretched-link"
       %p.card-text.text-muted= post.summary

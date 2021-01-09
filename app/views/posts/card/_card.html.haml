@@ -2,8 +2,10 @@
 
 %div.card.w-100.mb-3.hvr-backward
   %div.row.g-0
-    %div.col-md-4.d-flex.justify-content-center.align-items-center.bg-secondary.text-white.post-card-img
-      %i.fab.my-5.display-1{class: "fa-#{post.tags[0]}"}
+
+    %div.col-md-4.d-flex.justify-content-center.align-items-center.bg-secondary.text-white.border-right.post-card-img
+      %i.my-5.display-1{class: "devicon-#{post.tags[0]}-plain"}
+
     %div.col-md-8
       %div.card-body
         %h5.card-title= post.title

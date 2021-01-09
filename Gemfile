@@ -22,7 +22,6 @@ gem 'jquery-ui-rails'
 gem 'whenever'
 gem 'sitemap_generator'
 gem 'meta-tags'
-gem 'google-analytics-rails'
 gem 'google-api-client'
 gem 'social-share-button'
 

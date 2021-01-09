@@ -1,6 +1,6 @@
 Post.create(
   category_list: "Tech",
-  tag_list: "raspberry-pi, linux",
+  tag_list: "linux",
   title: "RaspberryPi Zeroでgattlibのインストールが失敗する",
   summary: "RaspberryPi Zeroでpybluez[ble]のgattlibのインストールに失敗したときの解決方法",
   body:  <<-EOS

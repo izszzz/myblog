@@ -9,7 +9,7 @@
   %div.col-12.col-md-8
     %div.d-flex.justify-content-around.align-items-center.w-100.mb-3.bg-secondary.text-white.post-show-img
       - @post.tags.each do |tag|
-        %i.fab.display-1{class: "fa-#{tag}"}
+        %i.my-5.display-1{class: "devicon-#{tag}-plain"}
 
     %p
       %small.text-muted
@@ -35,7 +35,7 @@
           %div.col-5.card.h-100.hvr-backward
             %div.row
               %div.col-0.col-lg-4.d-none.d-lg-flex.justify-content-center.align-items-center.bg-secondary.text-white
-                %i.fab.display-5{class: "fa-#{prev_post.tags[0]}"}
+                %i.display-5{class: "devicon-#{prev_post.tags[0]}-plain"}
               %div.col-12.col-lg-8
                 %div.card-body
                   %h6 
@@ -53,7 +53,7 @@
                     Next : 
                     = link_to next_post.title, next_post, class: "text-body stretched-link"
               %div.col-0.col-lg-4.d-none.d-lg-flex.justify-content-center.align-items-center.bg-secondary.text-white
-                %i.fab.display-5{class: "fa-#{next_post.tags[0]}"}
+                %i.display-5{class: "devicon-#{next_post.tags[0]}-plain"}
 
     %div.mt-5
       = render "bottom-content", random_posts: @post.random

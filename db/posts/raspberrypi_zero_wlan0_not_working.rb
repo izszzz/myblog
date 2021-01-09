@@ -1,6 +1,6 @@
 Post.create(
   category_list: "Tech",
-  tag_list: "raspberry-pi, linux",
+  tag_list: "linux",
   title: "RaspberryPi ZeroでWifiにつながらない場合にやること",
   summary: "RaspberryPiのWifiの設定でつまずいたときの解決方法",
   body: <<-EOS

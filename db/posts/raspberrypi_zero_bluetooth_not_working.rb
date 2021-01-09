@@ -1,6 +1,6 @@
 Post.create(
   category_list: "Tech",
-  tag_list: "linux, raspberry-pi",
+  tag_list: "linux",
   title: "bluetoothctlのpairは成功するが、connectが失敗する",
   summary: "RaspberryPiのbluetoothctlコマンドのconnectが失敗するときの解決方法",
   body: <<-EOS
