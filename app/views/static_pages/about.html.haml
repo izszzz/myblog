@@ -1,54 +1,68 @@
-- links = [[" Github", "https://github.com/izszzz", "fa-github"],  [" Twitter", "https://github.com/izszzz", "fa-twitter"], ["MENTA", "https://github.com/izszzz", ""], ["Carbonmade", "https://github.com/izszzz", ""]]
+:ruby
+  profiles = ["2020/10/5", "都内在住", "WEB Programming/Compose"]
+  links = [
+    ["Github", "https://github.com/izszzz", "github-original"],
+    ["Twitter", "https://github.com/izszzz", "twitter-plain"], 
+    ["MENTA", "https://github.com/izszzz", ""], 
+    ["Carbonmade", "https://github.com/izszzz", ""]
+  ]
+  lang_skills = [
+    ["first", "Ruby", "ruby-plain", [["Ruby on Rails", "rails-plain"]]], 
+    ["second" , "Node.js", "nodejs-plain", [
+        ["Typescript", "typescript-plain"],
+        ["Express", "express-original"],
+        ["Electron", "electron-original"],
+        ["React/ReactNative", "react-plain"],
+        ["ReduxToolkit", "redux-original"],
+        ["Next.js", ""],
+      ]
+    ],
+    ["third", "Python", "python-plain", [["Flask", ""]]]
+  ]
+  other_skills = [
+    ["HTML", "devicon-html5-plain"],
+    ["CSS3", "devicon-css3-plain"],
+    ["Sass", "devicon-sass-plain"],
+    ["Javascript", "devicon-javascript-plain"],
+    ["Bootstrap", "devicon-bootstrap-plain"],
+    ["Material-UI", "devicon-materialui-plain"],
+    ["Git", "devicon-git-plain"],
+    ["Docker", "devicon-docker-plain"],
+    ["RaspberryPi", "fab fa-raspberry-pi text-danger"],
+    ["GIMP", "devicon-gimp-plain"]
+  ]
 
 %h1 iz profile
 %ul.list-group
-  %li.list-group-item 2000/10/5
-  %li.list-group-item 都内在住
-  %li.list-group-item WEB Programming/Compose
+  - profiles.each do |profile|
+    %li.list-group-item= profile
 
 %h2.mt-5 Link
 %ul.list-group
   - links.each do |name, path, classname|
-    = link_to name, path, class: "fab list-group-item list-group-item-action " + classname
+    = link_to path, class: "list-group-item list-group-item-action" do
+      %i.colored.pr-3.fs-5{class: "devicon-#{classname}"}
+      = name
 
 %h2.mt-5 Skill
 
 %div#accordionLang.accordion
-
+- lang_skills.each do |num, title, classname, details|
   %div.accordion-item
-    %h6#headingOne.accordion-header.bg-white
-      %button.accordion-button{type: "button", "data-toggle" => "collapse", "data-target" => "#collapseOne", "aria-expanded" => "true", "aria-controls" => "collapseOne"}
-        %i.devicon-ruby-plain.colored.pr-3
-        Ruby
-    %div#collapseOne.accordion-collapse.collapse.show{"aria-labelledby" => "headingOne", "data-parent" => "#accordionLang"}
+    %h6.accordion-header.bg-white{id: "heading" + num}
+      %button.accordion-button.collapsed{type: "button", "data-toggle" => "collapse", "data-target" => "#collapse" + num, "aria-expanded" => "false", "aria-controls" => "collapse" + num}
+        %i.colored.pr-3.fs-5{class: "devicon-#{classname}"}
+        = title
+    %div.accordion-collapse.collapse{id: "collapse" + num, "aria-labelledby" => "heading" + num, "data-parent" => "#accordionLang"}
       %div.accordion-body.bg-white
         %ul.list-group
-          %li.list-group-item Ruby on Rails(API)
+          - details.each do |title, classname|
+            %li.list-group-item
+              %i.colored.pr-3.fs-5{class: "devicon-#{classname}"}
+              = title
 
-  %div.accordion-item
-    %h6#headingTwo.accordion-header.bg-white
-      %button.accordion-button.collapsed{type: "button", "data-toggle" => "collapse", "data-target" => "#collapseTwo", "aria-expanded" => "false", "aria-controls" => "collapseTwo"}
-        %i.devicon-nodejs-plain.colored.pr-3
-        Node.js
-    %div#collapseTwo.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-parent" => "#accordionLang"}
-      %div.accordion-body.bg-white
-        %ul.list-group
-          %li.list-group-item.devicon-typescript-plain Typescript
-          %li.list-group-item.devicon-express-original Express
-          %li.list-group-item.devicon-electron-original Electron
-          %li.list-group-item.devicon-react-plain React/ReactNative/Vue
-          %li.list-group-item Next.js
-          %li.list-group-item.devicon-redux-original ReduxToolkit
-
-  %div.accordion-item
-    %h6#headingThree.accordion-header.bg-white
-      %button.accordion-button.collapsed{type: "button", "data-toggle" => "collapse", "data-target" => "#collapseThree", "aria-expanded" => "", "aria-controls" => "collapseThree"}
-        %i.devicon-python-plain.colored.pr-3
-        Python
-    %div#collapseThree.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-parent" => "#accordionLang"}
-      %div.accordion-body.bg-white
-        %ul.list-group
-          %li.list-group-item Flask
-          %li.fab.fa-raspberry-pi.list-group-item=" Raspberry pi"
-          %li.list-group-item pybleno
-
+%ul.list-group
+  - other_skills.each do |title, classname|
+    %li.list-group-item
+      %i.colored.pr-3.fs-5{class: classname}
+      = title
