@@ -15,10 +15,6 @@
 
         %div.d-flex.justify-content-end.my-2
           = link_to "Show", post, class: "btn btn-secondary stretched-link"
-          %div.btn-group
-            - if admin_signed_in?
-              = link_to "Edit", edit_post_path(post), class: "btn btn-success"
-              = link_to "Delete", post_path(post), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}
               
     %div.card-footer
       %small.text-muted
