@@ -39,3 +39,5 @@ docker-compose run web rails credentials:edit
 - [whenever](https://github.com/javan/whenever)
 - [bootstrap4-tagsinput](https://github.com/Nodws/bootstrap4-tagsinput)
 - [social-share-button](https://github.com/huacnlee/social-share-button)
+- [font-awesome-sass](https://fontawesome.com/)
+- [devicon](https://devicon.dev/)
