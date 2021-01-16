@@ -6,35 +6,34 @@ Post.create(
   body: <<-EOS
 # react-monaco-editorでaddCommandを使う
 
-react-monaco-editorでaddCommandを使うときの注意点
+[react-monaco-editor(github)][1]
 
 - [react-monaco-editorでaddCommandを使う](#react-monaco-editorでaddcommandを使う)
-    - [はじめに](#はじめに)
-    - [editorDidMountの問題](#editordidmountの問題)
-    - [解決策](#解決策)
+  - [はじめに](#はじめに)
+  - [editorDidMountの問題](#editordidmountの問題)
+  - [解決策](#解決策)
 
 ## はじめに
 
 react-monaco-editorをFunctional Componentで使用した際に起きた問題と解決方法を記載する。
-[react-monaco-editor(github)][1]
 
 ## editorDidMountの問題
 
 今回の問題は、monaco-editorに`Ctrl+S`コマンドを追加してセーブ機能を追加する際に起きた。
 
-```jsx
+```js
 const [editorText, setEditorText] = useState("")
 
 const editorDidMount = (editor)=> {
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Key_S, ()=>{
-        console.log(editorText)　//ファイルにエディターのテキストの内容を保存
-    })
+  editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Key_S, ()=>{
+    console.log(editorText)　//ファイルにエディターのテキストの内容を保存
+  })
 }
 return(
-    <MonacoEditor
-        onChange={setEditorText} //エディターが更新されるたびにeditorTextを更新する
-        editorDidMount={editorDidMount} //　マウントされた時、addCommandをする。
-    />
+  <MonacoEditor
+    onChange={setEditorText} //エディターが更新されるたびにeditorTextを更新する
+    editorDidMount={editorDidMount} //　マウントされた時、addCommandをする。
+  />
 )
 ```
 
@@ -47,23 +46,23 @@ return(
 
 Hooksでは以下のように行う。
 
-```jsx
+```js
 const editorRef = useRef(null)
 const [editorText, setEditorText] = useState("")
 
 useEffect(() => {
-    const editor = editorRef.current?.editor;
-    editor.addCommand(
-        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S,
-        console.log(editoText)
-    );
-}, [editorText]); // editorTextが更新されるたびにアップデート
+  const editor = editorRef.current?.editor;
+  editor.addCommand(
+    monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S,
+    console.log(editoText)
+  );
+}, [editorText]);// editorTextが更新されるたびにアップデート
 
 return(
-    <MonacoEditor
-        ref={editorRef}
-        onChange={setEditorText} 
-    />
+  <MonacoEditor
+    ref={editorRef}
+    onChange={setEditorText} 
+  />
 )
 ```
 

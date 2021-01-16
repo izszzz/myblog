@@ -22,7 +22,9 @@
 
     %div.bg-white.border.p-3
       - if admin_signed_in?    
-        = link_to 'Edit', edit_post_path(@post), class: "btn btn-success w-100"
+        %div.btn-group.w-100
+          = link_to 'Edit', edit_post_path(@post), class: "btn btn-success w-50"
+          = link_to "Delete", post_path(@post), method: :delete, class: "btn btn-danger w-50"
 
 
       %div.mt-3

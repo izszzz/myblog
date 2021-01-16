@@ -33,6 +33,7 @@ module MarkdownHelper
       no_intra_emphasis: true,
       fenced_code_blocks: true,
       space_after_headers: true,
+      tables: true,
     }
     renderer = HTML.new options
     markdown = Redcarpet::Markdown.new renderer, extensions
