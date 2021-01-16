@@ -20,6 +20,12 @@ module MarkdownHelper
         %(<h6 id='#{query}' class='mt-5 pb-1 border-bottom'>#{text}</h6>)
       end 
     end
+    def table(header, body)
+      "<table class='table'>" \
+      "<thead>#{header}</thead>" \
+      "<tbody>#{body}</tbody>" \
+    "</table>"
+    end
   end
   
 
