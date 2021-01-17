@@ -25,8 +25,12 @@
     = form.text_field :tag_list, class: "form-control", placeholder: "category", data:{role: "tagsinput"}, value: post.tag_list.join(", ")
 
   %div.mb-3
+    = label :mdfile, :mdfile, class: "form-label"
+    = file_field :mdfile, :mdfile, id: "mdFileField", class: "form-control"
+
+  %div.mb-3
     = form.label :body, class: "form-label"
-    = form.text_area :body, class: "form-control", placeholder: "body"
+    = form.text_area :body, id: "mdTextArea",class: "form-control", placeholder: "body"
 
   %div.actions
     = form.button class:"btn btn-primary", type: "button", onclick: "submit();"

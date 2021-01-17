@@ -41,3 +41,4 @@ docker-compose run web rails credentials:edit
 - [social-share-button](https://github.com/huacnlee/social-share-button)
 - [font-awesome-sass](https://fontawesome.com/)
 - [devicon](https://devicon.dev/)
+- [heroku-buildpack-nginx](https://github.com/heroku/heroku-buildpack-nginx/)
