@@ -34,6 +34,7 @@ module MarkdownHelper
     options = { 
       filter_html: true,
       with_toc_data: true,
+      hard_wrap: true
     }
     extensions = {
       autolink: true,
