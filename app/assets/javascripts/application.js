@@ -18,6 +18,7 @@
 //= require jquery-ui/widgets/autocomplete
 //= require popper
 //= require bootstrap-sprockets
+//= require bootstrap-tagsinput
 //= require_tree .
 
 // autocomplete

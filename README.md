@@ -22,7 +22,7 @@ docker-compose run web rails credentials:edit
 - [redcarpet](https://github.com/vmg/redcarpet)
 - [rspec-rails](https://github.com/rspec/rspec-rails)
 - [hamlit](https://github.com/k0kubun/hamlit)
-- [device](https://github.com/heartcombo/devise)
+- [devise](https://github.com/heartcombo/devise)
 - [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on)
 - [kaminari](https://github.com/kaminari/kaminari)
 - [carrierwave](https://github.com/search?q=carrierwave)
