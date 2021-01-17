@@ -19,7 +19,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap-tagsinput
-//= require_tree .
+//= require_tree ./common
 
 // autocomplete
 $(document).on("turbolinks:load", function(){
@@ -49,18 +49,4 @@ $(document).on("turbolinks:load", function(){
                 .appendTo(ul.addClass("list-group overflow-hidden"))
         }
     )
-})
-
-// mdfile
-$(document).on("turbolinks:load", function(){
-    const fileReader = new FileReader()
-    const mdFileField = document.getElementById("mdFileField")
-    const mdTextArea = document.getElementById("mdTextArea")
-
-    mdFileField.addEventListener("change", function(e){
-        fileReader.readAsText(e.target.files[0])
-        fileReader.onload = function(){
-            mdTextArea.value = fileReader.result
-        }
-    })
 })
