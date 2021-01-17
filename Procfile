@@ -1,1 +1,1 @@
-web: bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}
+web: bin/start-nginx bundle exec unicorn -c config/unicorn.rb
