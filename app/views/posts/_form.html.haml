@@ -22,7 +22,7 @@
 
   %div.mb-3
     = form.label :tag_list, class: "form-label tagsinput"
-    = form.text_field :tag_list, class: "form-control", placeholder: "category", data:{role: "tagsinput"}
+    = form.text_field :tag_list, class: "form-control", placeholder: "category", data:{role: "tagsinput"}, value: post.tag_list.join(", ")
 
   %div.mb-3
     = form.label :body, class: "form-label"
