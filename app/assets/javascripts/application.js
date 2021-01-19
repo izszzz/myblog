@@ -24,7 +24,6 @@
 // autocomplete
 $(document).on("turbolinks:load", function(){
     const dataList = function(req, res) {
-        console.log(req)
         $.ajax({
             url: "/posts/autocomplete",
             dataType: "json",

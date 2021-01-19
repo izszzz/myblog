@@ -30,10 +30,18 @@ docker-compose run web rails credentials:edit
 - [fog](https://github.com/fog/fog)
 - [active_link_to](https://github.com/comfy/active_link_to)
 - [ransack](https://github.com/activerecord-hackery/ransack)
+- [whenever](https://github.com/javan/whenever)
+- [heroku-buildpack-nginx](https://github.com/heroku/heroku-buildpack-nginx/)
+
+### SEO
+
 - [google-api-client](https://github.com/googleapis/google-api-ruby-client)
 - [sitemap_generator](https://github.com/adamsalter/sitemap_generator)
-- [whenever](https://github.com/javan/whenever)
 - [meta-tags](https://github.com/kpumuk/meta-tags)
+- [roboto](https://github.com/LaunchAcademy/roboto)
+
+### Assets
+
 - [bootstrap-rubygem](https://github.com/twbs/bootstrap-rubygem)
 - [bootstrap4-tagsinput](https://github.com/Nodws/bootstrap4-tagsinput)
 - [hover-rails](https://github.com/Leyka/hover-rails)
@@ -41,4 +49,3 @@ docker-compose run web rails credentials:edit
 - [social-share-button](https://github.com/huacnlee/social-share-button)
 - [font-awesome-sass](https://fontawesome.com/)
 - [devicon](https://devicon.dev/)
-- [heroku-buildpack-nginx](https://github.com/heroku/heroku-buildpack-nginx/)

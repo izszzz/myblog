@@ -23,6 +23,7 @@ gem 'whenever'
 gem 'sitemap_generator'
 gem 'meta-tags'
 gem 'google-api-client'
+gem 'roboto'
 gem 'social-share-button'
 gem 'unicorn'
 
