@@ -4,8 +4,8 @@ SitemapGenerator::Sitemap.default_host = "https://izszzz-blog.herokuapp.com/"
 SitemapGenerator::Sitemap.sitemaps_host= "https://s3-ap-northeast-1.amazonaws.com/#{Rails.application.credentials.s3[:name]}"
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
   Rails.application.credentials.s3[:name],
-  Rails.application.credentials.aws[:access_key],
-  Rails.application.credentials.aws[:secret_access_key],
+  aws_access_key_id: Rails.application.credentials.aws[:access_key],
+  aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
   aws_region: 'ap-northeast-1',
 )
 

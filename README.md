@@ -14,6 +14,15 @@ docker-compose up
 
 ```cmd
 docker-compose run web rails credentials:edit
+
+heroku config:set RAILS_MASTER_KEY=`cat config/master.key`
+```
+
+
+## Sitemap
+
+```cmd
+heroku run rails sitemap:refresh
 ```
 
 ## Gems
