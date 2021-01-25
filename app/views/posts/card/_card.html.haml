@@ -11,7 +11,7 @@
         %h5.card-title= post.title
         %p.card-text.text-muted= post.summary
         %small.text_muted
-          = render "tag_lists", tag_lists: tag_lists
+          = render "posts/tag_lists", tag_lists: tag_lists
 
         %div.d-flex.justify-content-end.my-2
           = link_to "Show", post, class: "btn btn-secondary stretched-link"
