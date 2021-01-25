@@ -1,4 +1,34 @@
 - if notice
   %div#notice.alert.alert-primary= notice
 
-%h1 StaticPages#home
+%h1 izszzz
+
+%div.row
+  %div.col
+    %div.card
+      %div.card-body
+        %h5.card-title About
+        %p.card-text Web系のフロントエンド、バックエンドをメインに活動しています。趣味で作曲をしています。
+        = link_to "Go About", static_pages_about_path, class: "btn btn-primary"
+  %div.col
+    %div.card
+      %div.card-body
+        %h5.card-title Posts 
+        %p.card-text 主にプログラミングなどの技術系についての記事を書いています。
+        = link_to "Go Posts", posts_path, class: "btn btn-primary"
+  %div.col
+    %div.card
+      %div.card-body
+        %h5.card-title Contact 
+        %p.card-text ブログに関するお問い合わせから、質問、お仕事の依頼などなんでも受け付けています。気軽にご連絡ください。
+        = link_to "Go Contact", new_contact_path, class: "btn btn-primary"
+
+%h2.mt-5 ランダム記事
+%div.row.row-cols-1.row-cols-md-2.row-cols-lg-4.g-1
+  - @post.random(8).each do |post|
+    = render "posts/card/card-sm-y", post: post
+
+%h2.mt-5 最新記事
+%div.row.row-cols-1.row-cols-md-2.row-cols-lg-4.g-1
+  - @post.latest(8).each do |post|
+    = render "posts/card/card-sm-y", post: post

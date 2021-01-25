@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
+    set_meta_tags title: "Home"
+    @post = Post.new
   end
 
   def about
