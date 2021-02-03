@@ -9,11 +9,26 @@
 
 %h1 izszzz
 
-%div.row.row-cols-1.row-cols-lg-3.g-1
+#carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
+  %ol.carousel-indicators
+    %li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleIndicators"}
+  .carousel-inner
+    .carousel-item.active
+      = link_to 'https://reword-web.herokuapp.com/' do
+        = image_tag 'reword.png', class: "img-fluid"
+  %a.carousel-control-prev{"data-slide" => "prev", :href => "#carouselExampleIndicators", :role => "button"}
+    %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+    %span.sr-only Previous
+  %a.carousel-control-next{"data-slide" => "next", :href => "#carouselExampleIndicators", :role => "button"}
+    %span.carousel-control-next-icon{"aria-hidden" => "true"}
+    %span.sr-only Next
+
+
+.row.row-cols-1.row-cols-lg-3.g-1.mt-5
   - cards.each do |title, text, path|
-    %div.col
-      %div.card.h-100
-        %div.card-body
+    .col
+      .card.h-100
+        .card-body
           %h5.card-title= title
           %p.card-text= text
           = link_to "Go " + title, path, class: "btn btn-primary"
