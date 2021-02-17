@@ -29,7 +29,6 @@ SitemapGenerator::Sitemap.create do
   #
   # Add all articles:
   #
-  add root_path
   add static_pages_privacy_path
   add static_pages_about_path
   add posts_tags_path
