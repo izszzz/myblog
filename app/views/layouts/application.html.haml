@@ -19,10 +19,14 @@
     = display_meta_tags site: 'izszzz blog'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    = yield :head
 
-  %body.bg-light
-    = render "layouts/header"
-    %div.container
-      = yield 
-    = render "layouts/footer"
+- begin
+  - if current_page?(root_path) || current_page?(posts_path) || current_page?(post_path)
+    %script{ "data-ad-client" => "ca-pub-2292531594226333",  async: "", src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+- rescue
+
+%body.bg-light
+  = render "layouts/header"
+  %div.container
+    = yield 
+  = render "layouts/footer"
